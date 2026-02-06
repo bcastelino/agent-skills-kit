@@ -1,3 +1,5 @@
+# Scripts
+
 Toolkit scripts for creating and packaging skills.
 
 - init_skill.py: scaffold a new skill directory

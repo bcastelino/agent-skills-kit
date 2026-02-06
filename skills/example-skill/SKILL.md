@@ -1,12 +1,11 @@
 ---
-name: video-downloader
-description: Downloads videos from common platforms for offline viewing, editing, or archival. Use when the user asks to save or archive a video.
-version: 1.0.0
-tags: [video, download, media]
+name: example-skill
+description: Example skill for downloading videos from common platforms for offline viewing, editing, or archival.
 license: MIT
+metadata: {version: "1.0.0", tags: [video, download, media]}
 ---
 
-# Video Downloader
+# Example Skill: Video Downloader
 
 ## When to Use
 - Save a video for offline viewing

@@ -47,9 +47,13 @@ def validate_skill(skill_path):
         errors.append(err)
         return errors
 
+    if frontmatter is None:
+        errors.append("Frontmatter could not be parsed.")
+        return errors
+
     name = frontmatter.get("name", "")
     description = frontmatter.get("description", "")
-    version = frontmatter.get("version", "")
+    metadata = frontmatter.get("metadata", "")
 
     if not name:
         errors.append("Frontmatter missing name.")
@@ -59,8 +63,10 @@ def validate_skill(skill_path):
     if not description or len(description) < 20:
         errors.append("Description must be specific (20+ characters).")
 
-    if version and not SEMVER_RE.match(version):
-        errors.append("Version must be semantic (X.Y.Z).")
+    if metadata:
+        match = re.search(r"version\s*:\s*([0-9]+\.[0-9]+\.[0-9]+)", metadata)
+        if match is None:
+            errors.append("Metadata version must be semantic (X.Y.Z).")
 
     return errors
 

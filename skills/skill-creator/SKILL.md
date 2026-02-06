@@ -1,9 +1,8 @@
 ---
 name: skill-creator
 description: Interactive assistant that scaffolds new Agent Skills. Use this when the user wants to create, write, or generate a new skill.
-version: 1.0.0
-tags: [skill-authoring, scaffolding, templates]
 license: MIT
+metadata: {version: "1.0.0", tags: [skill-authoring, scaffolding, templates]}
 ---
 
 # Skill Creator

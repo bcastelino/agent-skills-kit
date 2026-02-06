@@ -4,7 +4,7 @@ Toolkit for authoring and packaging Agent Skills. Includes a meta skill, templat
 
 ## Repository Structure
 
-```
+```text
 agent-skills-kit/
 ├── .claude-plugin/
 │   └── marketplace.json
@@ -58,13 +58,13 @@ Local development:
 /plugin marketplace add ./agent-skills-kit
 ```
 
-Then ask: "Use skill-creator to build a new skill for <task>."
+Then ask: "Use skill-creator to build a new skill for your task."
 
 ### VS Code
 
 1. Open the repository folder.
 2. Use the integrated terminal to run the toolkit scripts.
-3. Edit skills in skills/<skill-name>/SKILL.md.
+3. Edit skills in skills/{skill-name}/SKILL.md.
 
 ### Cursor
 
@@ -88,8 +88,8 @@ Use the skill-creator or start from templates:
 After authoring:
 
 ```bash
-python scripts/validate_skill.py skills/<skill-name>
-python scripts/package_skill.py skills/<skill-name>
+python scripts/validate_skill.py skills/{skill-name}
+python scripts/package_skill.py skills/{skill-name}
 ```
 
 ## Compatibility Notes
