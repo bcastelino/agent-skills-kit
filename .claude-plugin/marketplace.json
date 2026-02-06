@@ -1,0 +1,19 @@
+{
+    "name": "agent-skills-kit",
+    "owner": {
+        "name": "Brian Castelino",
+        "email": "your-email@example.com"
+    },
+    "plugins": [
+        {
+            "name": "skill-creator",
+            "source": "./skills/skill-creator",
+            "description": "Helps users create new skills from templates and rules."
+        },
+        {
+            "name": "example-skill",
+            "source": "./skills/example-skill",
+            "description": "Example skill showing structure and writing style."
+        }
+    ]
+}
