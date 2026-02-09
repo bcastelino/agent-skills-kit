@@ -1,8 +1,8 @@
 <h1 align="center">Agent Skills Kit</h1>
 
-![Agent Skills Architecture](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fddd7e6e572ad0b6a943cacefe957248455f6d522-1650x929.jpg&w=3840&q=75)
+> Toolkit for authoring and packaging Agent Skills. Includes a meta skill, templates, a sample skill, and scripts for validation and packaging.
 
-Toolkit for authoring and packaging Agent Skills. Includes a meta skill, templates, a sample skill, and scripts for validation and packaging.
+![Agent Skills Architecture](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fddd7e6e572ad0b6a943cacefe957248455f6d522-1650x929.jpg&w=3840&q=75)
 
 ## Anatomy of a Skill
 
@@ -126,3 +126,47 @@ The validator enforces Agent Skills best practices and the open spec:
 - Anthropic skills repo: [github.com/anthropics/skills](https://github.com/anthropics/skills)
 - Skill creator reference: [github.com/anthropics/skills/tree/main/skills/skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
 - Open spec: [agentskills.io/home](https://agentskills.io/home)
+
+## Author
+
+<table>
+   <tr>
+      <td>
+         <div style="flex-shrink: 0; order: 2;">
+            <img src="https://raw.githubusercontent.com/bcastelino/brian-portfolio/refs/heads/main/public/personal/profile.jpg" alt="Brian Denis Castelino" style="border-radius: 50%; width: 180px; height: 180px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+         </div>
+      </td>
+      <td>
+         <div align="left" style="padding: 20px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; max-width: 800px; gap: 40px; text-align: center;">
+               <div style="flex: 1; min-width: 250px; order: 1;">
+                  <h1 style="font-size: 2em; margin-bottom: 5px; color: #333;">Brian Denis Castelino</h1>
+                  <p style="font-size: 1.2em; color: #555; margin-bottom: 10px;">Data Analytics Engineer | AI Enthusiast</p>
+                  <p style="font-size: 1em; color: #777; margin-bottom: 20px;">I turn vague ideas into clean, working systems, because someone’s got to 🤖</p>
+                  <div style="display: flex; justify-content: center; gap: 30px;">
+                     <a href="https://github.com/bcastelino" target="_blank" style="text-decoration: none;">
+                     <img src="https://cdn-icons-png.flaticon.com/512/4494/4494756.png" alt="GitHub" width="30" height="30" style="width: 30px; height: 30px;">
+                     </a>
+                   &nbsp; &nbsp; &nbsp;
+                     <a href="https://linkedin.com/in/cas7elino" target="_blank" style="text-decoration: none;">
+                     <img src="https://cdn-icons-png.flaticon.com/512/4494/4494498.png" alt="LinkedIn" width="30" height="30" style="width: 30px; height: 30px;">
+                     </a>
+                   &nbsp; &nbsp; &nbsp;
+                     <a href="https://twitter.com/cas7elino" target="_blank" style="text-decoration: none;">
+                     <img src="https://cdn-icons-png.flaticon.com/512/4494/4494481.png" alt="Twitter" width="30" height="30" style="width: 30px; height: 30px;">
+                     </a>
+                   &nbsp; &nbsp; &nbsp;
+                     <a href="https://instagram.com/cas7elino" target="_blank" style="text-decoration: none;">
+                     <img src="https://cdn-icons-png.flaticon.com/512/4494/4494489.png" alt="Instagram" width="30" height="30" style="width: 30px; height: 30px;">
+                     </a>
+                   &nbsp; &nbsp; &nbsp;
+                     <a href="https://brianc.framer.website/" target="_blank" style="text-decoration: none;">
+                     <img src="https://cdn-icons-png.flaticon.com/512/4494/4494636.png" alt="Website" width="30" height="30" style="width: 30px; height: 30px;">
+                     </a>
+                  </div>
+               </div>
+      </td>
+      </div>
+      </div>
+   </tr>
+</table>

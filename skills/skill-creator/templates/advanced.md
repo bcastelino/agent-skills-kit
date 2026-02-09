@@ -1,8 +1,7 @@
 ---
 name: {{skill_name}}
-description: Use this when {{trigger_summary}}.
+description: This skill should be used when {{trigger_summary}}.
 license: MIT
-metadata: {version: "0.1.0", tags: [{{tag1}}, {{tag2}}]}
 ---
 
 # {{skill_name}}

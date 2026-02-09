@@ -2,7 +2,6 @@
 name: skill-creator
 description: Interactive assistant that scaffolds new Agent Skills. Use this when the user wants to create, write, or generate a new skill.
 license: MIT
-metadata: {version: "1.0.0", tags: [skill-authoring, scaffolding, templates]}
 ---
 
 # Skill Creator
@@ -35,6 +34,21 @@ skill-name/
 #### SKILL.md (required)
 Metadata quality matters. The `name` and `description` in YAML frontmatter determine when the skill triggers. Be specific about what the skill does and when to use it. Use third-person in frontmatter (e.g., "This skill should be used when...").
 
+Example frontmatter (all allowed keys shown):
+
+```yaml
+---
+name: pdf-rotator
+description: This skill should be used when the user needs to rotate or reorient PDF pages.
+license: MIT
+compatibility: [claude-code, vscode]
+allowed-tools: [terminal, filesystem]
+metadata:
+	version: 1.0.0
+	tags: [pdf, file-processing]
+---
+```
+
 #### Bundled Resources (optional)
 
 ##### Scripts (`scripts/`)
@@ -66,8 +80,8 @@ Files not intended to be loaded into context, but used in the output.
 ### Progressive Disclosure Design Principle
 Skills use a three-level loading system to manage context:
 
-1. Metadata (name + description) - Always in context (short)
-2. SKILL.md body - Loaded when the skill triggers
+1. Metadata (name + description) - Always in context (~100 words)
+2. SKILL.md body - Loaded when the skill triggers (<5k words)
 3. Bundled resources - Loaded as needed (scripts can execute without context load)
 
 ## Skill Creation Process
@@ -75,6 +89,11 @@ Follow the steps in order and skip only when clearly not applicable.
 
 ### Step 1: Understand the Skill with Concrete Examples
 Clarify how the skill will be used and gather concrete examples. Ask only a few questions at a time and follow up as needed. Conclude when you have a clear sense of what should trigger the skill and what it should accomplish.
+
+Trigger-example pairs (compact):
+- Trigger: "Rotate this PDF 90 degrees." -> Expected: use a PDF rotation script and return updated file.
+- Trigger: "Create a dashboard starter in React." -> Expected: copy boilerplate assets and explain how to run.
+- Trigger: "Summarize this vendor contract." -> Expected: reference a policy doc and produce a structured summary.
 
 ### Step 2: Plan the Reusable Skill Contents
 Analyze the examples to identify reusable resources:
@@ -138,6 +157,20 @@ The packaging script:
 
 If validation fails, fix errors and re-run packaging.
 
+Example output (happy path):
+```
+Validating skill at skills/my-new-skill...
+Validation passed.
+Packaging skill -> dist/my-new-skill.zip
+Done.
+```
+
+Common validation errors (fix and retry):
+- Description missing trigger keywords (add "use/when" phrasing)
+- Name is not kebab-case or does not match folder name
+- Frontmatter contains disallowed keys or invalid YAML
+- SKILL.md exceeds 500 lines
+
 ### Step 6: Iterate
 Iteration workflow:
 1. Use the skill on real tasks
@@ -170,6 +203,11 @@ Iteration workflow:
 - Avoid time-sensitive instructions or timestamps.
 - Keep references one level deep (references/ only; no nested folders).
 - Do not create extra README files inside skill folders.
+
+## Additional Links
+- Templates: templates/basic.md, templates/advanced.md
+- Example skill: ../test-skill/SKILL.md
+- Reference: https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator
 
 ## Toolkit Scripts (Optional)
 If this repository includes toolkit scripts at scripts/:
