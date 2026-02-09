@@ -1,7 +1,6 @@
 ---
 name: skill-creator
 description: Interactive assistant that scaffolds new Agent Skills. Use this when the user wants to create, write, or generate a new skill.
-license: MIT
 ---
 
 # Skill Creator
@@ -21,7 +20,7 @@ Every skill consists of a required SKILL.md file and optional bundled resources:
 ```
 skill-name/
 ├── SKILL.md (required)
-│   ├── YAML frontmatter metadata (required)
+│   ├── YAML frontmatter (required)
 │   │   ├── name: (required)
 │   │   └── description: (required)
 │   └── Markdown instructions (required)
@@ -34,18 +33,12 @@ skill-name/
 #### SKILL.md (required)
 Metadata quality matters. The `name` and `description` in YAML frontmatter determine when the skill triggers. Be specific about what the skill does and when to use it. Use third-person in frontmatter (e.g., "This skill should be used when...").
 
-Example frontmatter (all allowed keys shown):
+Example frontmatter (VS Code compatible):
 
 ```yaml
 ---
 name: pdf-rotator
 description: This skill should be used when the user needs to rotate or reorient PDF pages.
-license: MIT
-compatibility: [claude-code, vscode]
-allowed-tools: [terminal, filesystem]
-metadata:
-	version: 1.0.0
-	tags: [pdf, file-processing]
 ---
 ```
 
@@ -181,12 +174,10 @@ Iteration workflow:
 ## Validation Rules
 - Name must be kebab-case, 1-80 characters, and match the folder name.
 - Frontmatter must be valid YAML wrapped in --- lines.
-- Allowed keys: name, description, license, compatibility, allowed-tools, metadata.
 - Required fields: name, description.
+- VS Code uses only `name` and `description`. Keep names <= 64 characters for VS Code compatibility.
 - Description must be specific (1-1024 chars), include trigger keywords (use/when), and avoid XML tags.
 - Avoid reserved words in name/description (claude, anthropic).
-- If metadata is present, it must be a map. If metadata.version is present, use semantic versioning (X.Y.Z).
-- If metadata.tags is present, use kebab-case tags.
 - Keep SKILL.md under 500 lines.
 
 ## Template Usage
@@ -203,6 +194,7 @@ Iteration workflow:
 - Avoid time-sensitive instructions or timestamps.
 - Keep references one level deep (references/ only; no nested folders).
 - Do not create extra README files inside skill folders.
+- If keeping skills outside `.github/skills/`, document the `chat.agentSkillsLocations` setting so VS Code can discover them.
 
 ## Additional Links
 - Templates: templates/basic.md, templates/advanced.md

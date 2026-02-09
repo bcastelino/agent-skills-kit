@@ -8,12 +8,12 @@
         {
             "name": "skill-creator",
             "source": "./skills/skill-creator",
-            "description": "Helps users create new skills from templates and rules."
+            "description": "Interactive assistant that scaffolds new Agent Skills."
         },
         {
-            "name": "example-skill",
-            "source": "./skills/example-skill",
-            "description": "Example skill showing structure and writing style."
+            "name": "test-skill",
+            "source": "./skills/test-skill",
+            "description": "Example/template skill demonstrating SKILL.md structure and resources."
         }
     ]
 }

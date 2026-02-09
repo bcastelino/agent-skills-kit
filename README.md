@@ -11,7 +11,7 @@ Every skill consists of a required SKILL.md file and optional bundled resources:
 ```markdown
 skill-name/
 ├── SKILL.md (required)
-│   ├── YAML frontmatter metadata (required)
+│   ├── YAML frontmatter (required)
 │   │   ├── name: (required)
 │   │   └── description: (required)
 │   └── Markdown instructions (required)
@@ -76,6 +76,7 @@ Then ask: "Use skill-creator to build a new skill for your task."
 1. Open the repository folder.
 2. Use the integrated terminal to run the toolkit scripts.
 3. Edit skills in skills/{skill-name}/SKILL.md.
+4. Set `chat.agentSkillsLocations` to include `${workspaceFolder}/skills` if you keep this layout. VS Code otherwise looks in `.github/skills/` (recommended) or `.claude/skills/` (legacy).
 
 ### Cursor
 
@@ -115,6 +116,7 @@ python scripts/package_skill.py skills/{skill-name}
 The validator enforces Agent Skills best practices and the open spec:
 
 - Name must be kebab-case, 1-80 characters, and match the folder name
+- VS Code enforces a 64-character limit for `name`; keep names <= 64 for VS Code compatibility
 - Description must be 1-1024 characters and include trigger keywords
 - Avoid reserved words in name/description (claude, anthropic)
 - No XML/HTML tags in the description

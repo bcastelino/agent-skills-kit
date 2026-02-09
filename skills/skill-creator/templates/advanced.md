@@ -1,7 +1,6 @@
 ---
 name: {{skill_name}}
 description: This skill should be used when {{trigger_summary}}.
-license: MIT
 ---
 
 # {{skill_name}}
