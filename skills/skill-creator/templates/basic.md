@@ -1,6 +1,6 @@
 ---
 name: {{skill_name}}
-description: {{description}}
+description: Use this when {{trigger_summary}}.
 license: MIT
 metadata: {version: "0.1.0", tags: [{{tag1}}, {{tag2}}]}
 ---
@@ -11,9 +11,10 @@ metadata: {version: "0.1.0", tags: [{{tag1}}, {{tag2}}]}
 
 {{purpose}}
 
-## When to Use
+## Example Triggers
 
-{{trigger_conditions}}
+- {{trigger_example_1}}
+- {{trigger_example_2}}
 
 ## Inputs
 
@@ -29,3 +30,11 @@ metadata: {version: "0.1.0", tags: [{{tag1}}, {{tag2}}]}
 ## Output
 
 {{output_description}}
+
+## Examples
+
+**Input**
+{{example_input}}
+
+**Output**
+{{example_output}}
