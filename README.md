@@ -93,7 +93,7 @@ VS Code looks for skills in `.github/skills` by default, but you can configure i
     ```json
     {
        "chat.agentSkillsLocations": [
-          "./skills"
+          "./skills": true
        ]
     }
     ```
