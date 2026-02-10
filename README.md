@@ -2,7 +2,7 @@
 
   <h1>Agent Skills Kit</h1>
 
-  <img src="C:\Users\BrianCastelino\Projects\agent-skills-kit\agent-skills-banner.png" alt="Agent Skills Kit Banner" width="100%" />
+  <img src="agent-skills-banner.png" alt="Agent Skills Kit Banner" width="100%" />
 
   <p>
     <b>Write Once, Run Anywhere.</b><br>
