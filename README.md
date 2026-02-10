@@ -2,7 +2,7 @@
 
   <h1>Agent Skills Kit</h1>
 
-  <img src="agent-skills-banner.png" alt="Agent Skills Kit Banner" width="100%" />
+  <img src="assets/images/agent-skills-banner.png" alt="Agent Skills Kit Banner" width="100%" />
 
   <p>
     <b>Write Once, Run Anywhere.</b><br>
@@ -20,15 +20,10 @@
       <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome">
     </a>
   </p>
-
-  <br />
-
 </div>
 
 ---
 > Toolkit for authoring and packaging Agent Skills. Includes a meta skill, templates, a sample skill, and scripts for validation and packaging.
-
-![Agent Skills Architecture](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fddd7e6e572ad0b6a943cacefe957248455f6d522-1650x929.jpg&w=3840&q=75)
 
 ---
 ## Anatomy of a Skill
@@ -179,6 +174,8 @@ Copy the specific skill folder you want (e.g., `skills/skill-creator`) to your p
 
 ---
 ## Creating a Skill
+
+<img src="assets/images/ai-skill-factory.png" alt="Agent Skills Kit Banner" width="100%" />
 
 Use the skill-creator or start from templates:
 
