@@ -57,7 +57,7 @@ Toolkit scripts for creating and packaging skills.
 - init_skill.py: scaffold a new skill directory
 
 ```bash
-python scripts/init_skill.py my-new-skill
+python scripts/init_skill.py my-new-skill --path skills
 ```
 
 - validate_skill.py: validate SKILL.md frontmatter and structure
