@@ -216,7 +216,7 @@ The validator enforces Agent Skills best practices and the open spec:
 - Agent Skills best practices: [platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - Anthropic skills repo: [github.com/anthropics/skills](https://github.com/anthropics/skills)
 - Skill creator reference: [github.com/anthropics/skills/tree/main/skills/skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
-- Awesome Claude Skills: [https://github.com/ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+- Awesome Claude Skills: [github.com/ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
 - Open spec: [agentskills.io/home](https://agentskills.io/home)
 
 ---
