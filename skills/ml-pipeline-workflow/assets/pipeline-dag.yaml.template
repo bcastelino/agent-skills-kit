@@ -1,0 +1,63 @@
+# ML Pipeline DAG Template
+# Customize stages for your specific pipeline.
+
+pipeline:
+  name: my-ml-pipeline
+  version: 1.0.0
+  schedule: "0 6 * * *"  # Daily at 6 AM
+
+stages:
+  data_ingestion:
+    description: Fetch raw data from sources
+    inputs:
+      - source: database
+        query: "SELECT * FROM raw_events WHERE date >= '{{ds}}'"
+    outputs:
+      - raw_dataset
+    timeout: 30m
+
+  data_validation:
+    description: Validate data quality
+    depends_on: [data_ingestion]
+    inputs: [raw_dataset]
+    outputs: [validated_dataset]
+    checks:
+      - schema_validation
+      - null_check
+      - volume_check
+    timeout: 10m
+
+  feature_engineering:
+    description: Transform raw data into features
+    depends_on: [data_validation]
+    inputs: [validated_dataset]
+    outputs: [feature_set]
+    timeout: 45m
+
+  model_training:
+    description: Train model with hyperparameter tuning
+    depends_on: [feature_engineering]
+    inputs: [feature_set]
+    outputs: [trained_model]
+    params: hyperparameters.yaml
+    resources:
+      gpu: 1
+      memory: 16Gi
+    timeout: 2h
+
+  model_evaluation:
+    description: Evaluate model against holdout set
+    depends_on: [model_training]
+    inputs: [trained_model, test_dataset]
+    outputs: [evaluation_report]
+    timeout: 15m
+
+  model_deployment:
+    description: Deploy model if evaluation passes
+    depends_on: [model_evaluation]
+    inputs: [trained_model, evaluation_report]
+    outputs: [deployed_model]
+    gate:
+      metric: f1_score
+      threshold: 0.90
+    timeout: 20m
