@@ -52,125 +52,56 @@ skill-name/
 
 ### Toolkit Scripts
 
-Toolkit scripts for creating and packaging skills.
+| Script | Purpose | Command |
+|---|---|---|
+| `scripts/init_skill.py` | Scaffold a new skill directory with starter resources | `python scripts/init_skill.py my-new-skill --path skills` |
+| `scripts/validate_skill.py` | Validate `SKILL.md` frontmatter and structure | `python scripts/validate_skill.py skills/my-new-skill` |
+| `scripts/package_skill.py` | Validate and package a skill as a zip archive | `python scripts/package_skill.py skills/my-new-skill` |
 
-- init_skill.py: scaffold a new skill directory
+The initializer creates example files in `scripts/`, `references/`, and `assets/` so you can customize or delete them.
 
-```bash
-python scripts/init_skill.py my-new-skill --path skills
-```
+---
+## Skills Catalog
 
-- validate_skill.py: validate SKILL.md frontmatter and structure
+### Categorized Skills (with links)
 
-```bash
-python scripts/validate_skill.py skills/my-new-skill
-```
-
-- package_skill.py: validate and zip a skill for distribution
-
-```bash
-python scripts/package_skill.py skills/my-new-skill
-```
-
-The initializer creates example files in scripts/, references/, and assets/ so you can customize or delete them.
+| Category | Skills |
+|---|---|
+| Core Engineering & Quality | [skill-creator](skills/skill-creator) \| [software-architecture](skills/software-architecture) \| [clean-code](skills/clean-code) \| [code-reviewer](skills/code-reviewer) \| [code-review-excellence](skills/code-review-excellence) \| [requesting-code-review](skills/requesting-code-review) \| [commit](skills/commit) \| [context-optimization](skills/context-optimization) \| [vibe-code-auditor](skills/vibe-code-auditor) \| [code-refactoring-context-restore](skills/code-refactoring-context-restore) \| [code-refactoring-refactor-clean](skills/code-refactoring-refactor-clean) \| [code-refactoring-tech-debt](skills/code-refactoring-tech-debt) |
+| AI, Agents & RAG | [ai-agent-development](skills/ai-agent-development) \| [ai-agents-architect](skills/ai-agents-architect) \| [ai-engineer](skills/ai-engineer) \| [ai-ml](skills/ai-ml) \| [ai-product](skills/ai-product) \| [crewai](skills/crewai) \| [langgraph](skills/langgraph) \| [mcp-builder](skills/mcp-builder) \| [embedding-strategies](skills/embedding-strategies) \| [rag-engineer](skills/rag-engineer) \| [rag-implementation](skills/rag-implementation) \| [notebooklm](skills/notebooklm) |
+| Data Engineering & Analytics | [business-analyst](skills/business-analyst) \| [data-engineer](skills/data-engineer) \| [data-scientist](skills/data-scientist) \| [data-storytelling](skills/data-storytelling) \| [data-engineering-data-driven-feature](skills/data-engineering-data-driven-feature) \| [data-engineering-data-pipeline](skills/data-engineering-data-pipeline) \| [spark-optimization](skills/spark-optimization) \| [ml-pipeline-workflow](skills/ml-pipeline-workflow) |
+| ML, MLOps & Training | [ml-engineer](skills/ml-engineer) \| [mlops-engineer](skills/mlops-engineer) \| [temporal-python-pro](skills/temporal-python-pro) \| [python-pro](skills/python-pro) \| [python-testing-patterns](skills/python-testing-patterns) \| [unit-testing-test-generate](skills/unit-testing-test-generate) |
+| Python & API Development | [python-development-python-scaffold](skills/python-development-python-scaffold) \| [python-fastapi-development](skills/python-fastapi-development) \| [fastapi-pro](skills/fastapi-pro) \| [fastapi-router-py](skills/fastapi-router-py) \| [fastapi-templates](skills/fastapi-templates) \| [uv-package-manager](skills/uv-package-manager) |
+| Databases & SQL | [database-design](skills/database-design) \| [database-migration](skills/database-migration) \| [database-optimizer](skills/database-optimizer) \| [database-cloud-optimization-cost-optimize](skills/database-cloud-optimization-cost-optimize) \| [nosql-expert](skills/nosql-expert) \| [postgresql](skills/postgresql) \| [postgres-best-practices](skills/postgres-best-practices) \| [sql-pro](skills/sql-pro) \| [sql-optimization-patterns](skills/sql-optimization-patterns) |
+| Cloud, DevOps & GitHub | [aws-skills](skills/aws-skills) \| [cloud-architect](skills/cloud-architect) \| [cloud-devops](skills/cloud-devops) \| [gcp-cloud-run](skills/gcp-cloud-run) \| [prometheus-configuration](skills/prometheus-configuration) \| [git-advanced-workflows](skills/git-advanced-workflows) \| [github-actions-templates](skills/github-actions-templates) \| [github-automation](skills/github-automation) \| [github-workflow-automation](skills/github-workflow-automation) |
+| Product, Automation & Domain Tools | [full-stack-orchestration-full-stack-feature](skills/full-stack-orchestration-full-stack-feature) \| [game-development](skills/game-development) \| [computer-vision-expert](skills/computer-vision-expert) \| [scientific-skills](skills/scientific-skills) \| [vulnerability-scanner](skills/vulnerability-scanner) \| [code-documentation-code-explain](skills/code-documentation-code-explain) \| [code-documentation-doc-generate](skills/code-documentation-doc-generate) \| [pdf-official](skills/pdf-official) \| [pptx-official](skills/pptx-official) \| [youtube-summarizer](skills/youtube-summarizer) \| [hugging-face-cli](skills/hugging-face-cli) \| [hugging-face-jobs](skills/hugging-face-jobs) |
 
 ---
 ## IDE Compatibility & Setup
 
-This kit works in Claude Code, VS Code, Cursor, and other IDEs. The skill files are plain Markdown with optional scripts.
+This kit works in VS Code, Cursor, Antigravity, Claude CLI/Web, and other IDEs because skills are plain Markdown folders.
 
-This kit is designed to be "write once, run anywhere." Here is how to load these skills into your favorite AI-powered editor.
+### Compatibility Summary
 
-### VS Code (GitHub Copilot)
+| IDE / Platform | Default Skill Location | Quick Setup | Docs |
+|---|---|---|---|
+| VS Code (GitHub Copilot) | `.github/skills` | Set `chat.agentSkillsLocations` to include `./skills`, or symlink `skills` → `.github/skills` | https://code.visualstudio.com/docs/copilot/customization/agent-skills |
+| Cursor | `.cursor/skills` or `.claude/skills` | Symlink `skills` → `.cursor/skills`, or import as remote GitHub rule | https://cursor.com/docs/context/skills |
+| Google Antigravity | `.agent/skills` | Create `.agent/skills` and link/copy the repository `skills/` folder | https://antigravity.google/docs/skills |
+| Claude (CLI & Web) | `.claude/skills` (project or global) | Add plugin source with `/plugin marketplace add ...` or manually copy skill folders | https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview |
 
-Docs: https://code.visualstudio.com/docs/copilot/customization/agent-skills
+### Quick Setup Commands
 
-VS Code looks for skills in `.github/skills` by default, but you can configure it to look in this repo's `skills/` directory.
+| Platform | macOS / Linux | Windows |
+|---|---|---|
+| Cursor | `ln -s skills .cursor/skills` | `mklink /D .cursor\skills skills` |
+| Antigravity | `mkdir -p .agent && ln -s ../skills .agent/skills` | `mkdir .agent` + `mklink /D .agent\skills ..\skills` |
 
-**Method A: Configuration (Recommended)**
-1. Open your workspace settings (`.vscode/settings.json`).
-2. Add the `chat.agentSkillsLocations` setting pointing to the skills directory:
-    ```json
-    {
-       "chat.agentSkillsLocations": [
-          "./skills": true
-       ]
-    }
-    ```
-3. Restart VS Code or reload the window. Copilot will now automatically discover all skills in the folder.
-
-**Method B: Standard Folder**
-
-Create a symbolic link or copy the `skills/` folder to `.github/skills` in your workspace root.
-
-### Cursor
-
-Docs: https://cursor.com/docs/context/skills
-
-Cursor automatically discovers skills in `.cursor/skills` or `.claude/skills`.
-
-**Method A: Symbolic Link (Recommended)**
-
-Run this command in your repository root to link the folder so Cursor can see it:
-
-```bash
-# MacOS / Linux
-ln -s skills .cursor/skills
-
-# Windows (Command Prompt as Admin)
-mklink /D .cursor\skills skills
-```
-
-**Method B: Import from GitHub**
-
-1. Open Cursor Settings > General > Rules.
-2. Under "Agent Skills," click Add Request.
-3. Select Remote Rule (GitHub) and paste this repository's URL.
-
-Usage: Cursor will automatically use the skill when relevant. You can also manually trigger it by typing `/` followed by the skill name (e.g., `/skill-creator`) in the Chat (Cmd+L) or Composer (Cmd+I).
-
-### Google Antigravity
-
-Docs: https://antigravity.google/docs/skills
-
-Antigravity looks for workspace-specific skills in the `.agent/skills` directory.
-
-Setup: You must link or copy the skills to the expected directory structure.
-
-```bash
-# MacOS / Linux
-mkdir -p .agent
-ln -s ../skills .agent/skills
-
-# Windows
-mkdir .agent
-mklink /D .agent\skills ..\skills
-```
-
-Usage: Antigravity automatically detects skills based on their description in SKILL.md. Ensure you are in "Agent Mode" (not just standard chat) for the model to execute scripts included in the skills.
-
-### Claude (CLI & Web)
-
-Docs: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
-
-This repository is configured as a Claude Plugin.
-
-**Method A: Claude Code (CLI)**
-
-If you have the claude CLI installed, you can add this entire repository as a plugin source:
+For Claude CLI plugin registration:
 
 ```bash
 /plugin marketplace add https://github.com/bcastelino/agent-skills-kit.git
 ```
-
-This registers the skills defined in `.claude-plugin/marketplace.json`.
-
-**Method B: Manual Install**
-
-Copy the specific skill folder you want (e.g., `skills/skill-creator`) to your project's local config folder:
-
-- Project-level: `.claude/skills/`
-- Global: `~/.claude/skills/`
 
 ---
 ## Creating a Skill
