@@ -110,8 +110,8 @@ For Claude CLI plugin registration:
 
 Use the skill-creator or start from templates:
 
-- skills/skill-creator/templates/basic.md for instruction-only skills
-- skills/skill-creator/templates/advanced.md for skills with scripts
+- `skills/skill-creator/templates/basic.md` for instruction-only skills
+- `skills/skill-creator/templates/advanced.md` for skills with scripts
 
 After authoring:
 
